@@ -1,7 +1,7 @@
 PROGRAM=exec_test
-SRCDIR=chapter8
+SRCDIR=chapter8/8.17
 INCLUDEDIR=
-EXCLUDE_SRCS=chapter8/ex-8.17.c
+EXCLUDE_SRCS=
 #CC=gcc -Os -U NDEBUG
 CC=gcc -Os -U NDEBUG
 LDFAGS=
