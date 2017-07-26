@@ -1,16 +1,16 @@
-PROGRAM=exec_test
-SRCDIR=chapter8/8.17
+PROGRAM=a.out
+SRCDIR=chapter10/10.24
 INCLUDEDIR=
 EXCLUDE_SRCS=
 #CC=gcc -Os -U NDEBUG
 CC=gcc -Os -U NDEBUG
-LDFAGS=
+LDFLAGS= -lpthread
 
 ALLSRCS = $(foreach dir,$(SRCDIR),$(wildcard $(dir)/*.c))
 SRCS = $(filter-out $(EXCLUDE_SRCS),$(ALLSRCS))
 OBJS = $(SRCS:%.c=%.o)
 INCLUDEDEPEND = $(SRCS:%.c=%.d)
-CFLAGS := $(CFLAGS) $(INCLUDEDIR)
+CFLAGS := $(CFLAGS) $(INCLUDEDIR) 
 
 $(PROGRAM):$(OBJS)
 	@$(CC) -o $@ $(filter %.o,$^) $(LDFLAGS)
